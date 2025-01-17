@@ -1,0 +1,25 @@
+{
+  "name": "mern.common",
+  "version": "1.0.0",
+  "description": "A collection of common utilities and modules for efficient MERN development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasirBasheer/mern.common.git"
+  },
+  "keywords": [
+    "mern",
+    "common",
+    "utilities",
+    "nodejs"
+  ],
+  "author": "jasirbasheer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JasirBasheer/mern.common/issues"
+  },
+  "homepage": "https://github.com/JasirBasheer/mern.common#readme"
+}
