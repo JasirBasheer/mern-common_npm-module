@@ -4,7 +4,8 @@
   "description": "A collection of common utilities and modules for efficient MERN development",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/JasirBasheer/mern.common/issues"
   },
-  "homepage": "https://github.com/JasirBasheer/mern.common#readme"
+  "homepage": "https://github.com/JasirBasheer/mern.common#readme",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
 }
