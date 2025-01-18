@@ -2,10 +2,14 @@
   "name": "mern.common",
   "version": "1.0.0",
   "description": "A collection of common utilities and modules for efficient MERN development",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -38,5 +42,14 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.5",
     "nodemailer": "^6.9.16"
+  },
+  "resolutions": {
+    "glob": "^9.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "overrides": {
+    "glob": "^9.0.0",
+    "rimraf": "^5.0.0",
+    "inflight": "^2.0.0"
   }
 }
