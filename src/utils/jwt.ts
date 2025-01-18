@@ -50,8 +50,8 @@ export async function generateToken(
  */
 
 export async function verifyToken(
-    token: string,
-    jwtSecret: string
+    jwtSecret: string,
+    token: string
 ): Promise<JwtPayload> {
     try {
         if (!jwtSecret) throw new Error('JWT_SECRET is not defined');
