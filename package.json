@@ -1,6 +1,6 @@
 {
   "name": "mern.common",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A collection of common utilities and modules for efficient MERN development",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
