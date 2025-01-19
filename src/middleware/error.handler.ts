@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { CustomError } from '../errors/error.custom';
+import { BaseError } from '../errors/error.base';
 
 export const errorHandler = (
     err: any, 
@@ -14,7 +14,7 @@ export const errorHandler = (
         res.clearCookie('refreshToken', { httpOnly: false, secure: false });
     }
 
-    if (err instanceof CustomError) {
+    if (err instanceof BaseError) {
         res.status(err.statusCode).json({ errors: err.serializeError() });
     } else {
         res.status(500).json({

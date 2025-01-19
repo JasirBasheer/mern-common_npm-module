@@ -1,4 +1,6 @@
 import jwt, { JwtPayload, TokenExpiredError } from 'jsonwebtoken';
+import { CustomError } from '../errors/error.custom';
+import { UnauthorizedError } from '../errors/error.unauthorized';
 
 /**
  * Generates an access token and a refresh token.
@@ -13,12 +15,12 @@ export async function createTokens(
     payload: JwtPayload
 ): Promise<any> {
     try {
-        if (!jwtAccessSecret || !jwtRefreshSecret) throw new Error('Invalid token secrets');
+        if (!jwtAccessSecret || !jwtRefreshSecret) throw new CustomError('Invalid token secrets',500);
         const accessToken = jwt.sign(payload, jwtAccessSecret as string, { expiresIn: '1h' });
         const refreshToken = jwt.sign(payload, jwtRefreshSecret as string, { expiresIn: '7d' });
         return { accessToken, refreshToken };
     } catch (error) {
-        return new Error('Unexpected error occurred. Please try again');
+        return new CustomError('Unexpected error occurred. Please try again',500);
     }
 }
 
@@ -33,11 +35,10 @@ export async function generateToken(
     payload: JwtPayload
 ): Promise<any> {
     try {
-        if (!jwtSecret) throw new Error('Invalid token secret');
+        if (!jwtSecret) throw new CustomError('Invalid token secret',500);
         return jwt.sign(payload, jwtSecret as string, { expiresIn: '1h' });
     } catch (error) {
-        console.error(error);
-        return null;
+        throw error
     }
 }
 
@@ -54,13 +55,13 @@ export async function verifyToken(
     token: string
 ): Promise<JwtPayload> {
     try {
-        if (!jwtSecret) throw new Error('JWT_SECRET is not defined');
+        if (!jwtSecret) throw new CustomError('JWT_SECRET is not defined',500);
         const decoded = jwt.verify(token, jwtSecret) as JwtPayload;
         return decoded;
     } catch (error) {
         if (error instanceof TokenExpiredError) {
-            throw new Error('Token has expired');
+            throw new UnauthorizedError('Token has expired');
         }
-        throw new Error('Invalid Token');
+        throw new UnauthorizedError('Invalid Token');
     }
 }

@@ -1,6 +1,6 @@
-import { CustomError } from "./error.custom";
+import { BaseError } from "./error.base";
 
-export class ConflictError extends CustomError {
+export class ConflictError extends BaseError {
     statusCode = 409;
 
     constructor(message: string) {

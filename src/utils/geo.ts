@@ -1,4 +1,5 @@
 import geoip, { Lookup } from 'geoip-lite';
+import { CustomError } from '../errors/error.custom';
 
 /**
  * Finds the geographical location details for a given IP address.
@@ -9,7 +10,7 @@ import geoip, { Lookup } from 'geoip-lite';
 
 export default function findCountryByIp(ip: string): Lookup | null {
     if (!ip) {
-        throw new Error("IP not found");
+        throw new CustomError("IP not found",500);
     }
     return geoip.lookup(ip);
 }
