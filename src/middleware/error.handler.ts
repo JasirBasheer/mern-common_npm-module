@@ -15,7 +15,7 @@ export const errorHandler = (
     }
 
     if (err instanceof BaseError) {
-        res.status(err.statusCode).json({ errors: err.serializeError() });
+        res.status(err.statusCode).json({ error:err.message });
     } else {
         res.status(500).json({
             message: err.message || "Something went wrong",
