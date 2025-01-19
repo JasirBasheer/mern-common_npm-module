@@ -30,7 +30,7 @@ export function SendResponse (
 ) : any {
     try {
         return res.status(status)
-            .json({ message, ...(data !== undefined && data !== null && { data }) });
+            .json({ message, ...(data !== undefined && data !== null &&  data ) });
     } catch (err: any) {
         throw new Error(err);
     }
