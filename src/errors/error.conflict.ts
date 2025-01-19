@@ -7,5 +7,5 @@ export class ConflictError extends BaseError {
         super(message);
     }
 
-    serializeError = () => ({ message: this.message });
+    serializeError = () => ({ error: this.message });
 }

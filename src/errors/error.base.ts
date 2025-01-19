@@ -5,5 +5,5 @@ export abstract class BaseError extends Error {
         super(message);
     }
 
-    abstract serializeError: () => { message: string };
+    abstract serializeError: () => { error: string };
 }

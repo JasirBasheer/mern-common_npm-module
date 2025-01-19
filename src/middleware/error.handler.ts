@@ -15,7 +15,8 @@ export const errorHandler = (
     }
 
     if (err instanceof BaseError) {
-        res.status(err.statusCode).json({ error:err.message });
+        console.log(err);
+        res.status(err.statusCode).json({ message:err.message });
     } else {
         res.status(500).json({
             message: err.message || "Something went wrong",

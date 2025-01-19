@@ -8,5 +8,5 @@ export class CustomError extends BaseError {
         this.statusCode = status;
     }
 
-    serializeError = () => ({ message: this.message });
+    serializeError = () => ({ error: this.message });
 }
