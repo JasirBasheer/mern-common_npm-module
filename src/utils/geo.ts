@@ -8,7 +8,7 @@ import { CustomError } from '../errors/error.custom';
  * @throws {Error} If the IP address is invalid or not provided.
  */
 
-export default function findCountryByIp(ip: string): Lookup | null {
+export function findCountryByIp(ip: string): Lookup | null {
     if (!ip) {
         throw new CustomError("IP not found",500);
     }

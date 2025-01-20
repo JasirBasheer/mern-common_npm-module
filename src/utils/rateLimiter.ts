@@ -2,7 +2,7 @@ import rateLimit from 'express-rate-limit';
 import { Request, Response } from 'express';
 import { SendResponse } from '../functions/response.send';
 
-const limiter = rateLimit({
+export const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 500, 
   handler: (req: Request, res: Response) => {
@@ -13,4 +13,4 @@ const limiter = rateLimit({
 });
 
 
-export default limiter;
+
