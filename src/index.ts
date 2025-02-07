@@ -15,3 +15,6 @@ export * from './utils/rateLimiter';
 export * from './utils/geo'
 
 export * from './config/mongodb.connection'
+
+export * from './repository/IBaseRepository'
+export * from './repository/baseRepository'
