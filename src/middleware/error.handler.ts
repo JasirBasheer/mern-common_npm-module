@@ -20,7 +20,6 @@ export const errorHandler = (
     }
 
     if (err instanceof BaseError) {
-        console.log(err);
         res.status(err.statusCode).json({ error: err.message });
     } else {
         res.status(500).json({
