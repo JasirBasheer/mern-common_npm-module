@@ -36,6 +36,8 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^3.0.2",
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
     "geoip-lite": "^1.4.10",
