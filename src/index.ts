@@ -10,7 +10,6 @@ export * from './functions/nodeMailer'
 export * from "./middleware/error.handler";
 
 export * from "./utils/jwt";
-export * from './utils/bcrypt'
 export * from './utils/rateLimiter';
 export * from './utils/geo'
 

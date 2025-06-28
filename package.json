@@ -28,7 +28,6 @@
   },
   "homepage": "https://github.com/JasirBasheer/mern.common#readme",
   "devDependencies": {
-    "@types/bcryptjs": "^2.4.6",
     "@types/express": "^5.0.0",
     "@types/geoip-lite": "^1.4.4",
     "@types/jsonwebtoken": "^9.0.7",
@@ -37,7 +36,6 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
-    "bcryptjs": "^3.0.2",
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
     "geoip-lite": "^1.4.10",
