@@ -3,6 +3,7 @@ export * from "./errors/error.forbidden";
 export * from "./errors/error.notfound";
 export * from "./errors/error.unauthorized";
 export * from "./errors/error.custom";
+export * from "./errors/error.base";
 
 export * from "./functions/response.send";
 export * from './functions/nodeMailer'
