@@ -11,7 +11,7 @@ export class BaseRepository<T extends Document> implements IBaseRepository<T> {
 
     async find(query: FilterQuery<T>): Promise<T[] | []> {
         try {
-            return await this.model.find(query);
+            return await this.model.find(query).exec();
         } catch (err: any) {
             return [];
         }
@@ -19,7 +19,7 @@ export class BaseRepository<T extends Document> implements IBaseRepository<T> {
 
     async findOne(query: FilterQuery<T>): Promise<T | null> {
         try {
-            return await this.model.findOne(query);
+            return await this.model.findOne(query).exec();
         } catch (err: any) {
             return null;
         }
